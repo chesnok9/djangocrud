@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.col {
+    width: 10%;
+    padding: 5px;
+    display: inline-block;
+}
+.col.header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: #eee;
+}

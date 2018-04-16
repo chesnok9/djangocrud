@@ -1,0 +1,7 @@
+Env
+*.egg-info
+*.pot
+*.py[co]
+.tox/
+.idea/
+__pycache__

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load user_filters %}
+
+{% block title %}Users{% endblock %}
+
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock %}
+
+{% block content %}
+    <p><a href="{% url 'users:user-create' %}">Create</a> <a href="{% url 'users:user-export' %}">Export to CSV</a></p>
+    <div>
+        <span class="col header">Username</span>
+        <span class="col header">Birthday</span>
+        <span class="col header">Eligible</span>
+        <span class="col header">Random Number</span>
+        <span class="col header">BizzFuzz</span>
+    </div>
+    {% for user in object_list %}
+        <div>
+            <span class="col"><a href="{% url 'users:user-detail' user.id %}">{{user.username}}</a></span>
+            <span class="col">{{ user.birth_date }}</span>
+            <span class="col">{{ user.birth_date | allowed }}</span>
+            <span class="col">{{ user.random_number }}</span>
+            <span class="col">{{ user.random_number | bizzfuzz }}</span>
+            <span class="col">
+                <a href="{% url 'users:user-update' user.id %}">Edit</a>
+                <a href="{% url 'users:user-delete' user.id %}">Delete</a>
+            </span>
+        </div>
+    {% empty %}
+        <div>No users.</div>
+    {% endfor %}
+{% endblock %}

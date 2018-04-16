@@ -1,0 +1,6 @@
+Username,Birthday,Eligible,Random Number,BizzFuzz
+admin,1995-04-05,allowed,22,
+test,2013-02-11,blocked,83,
+testuser2,1997-11-11,allowed,60,BizzFuzz
+testuser3,2013-02-02,blocked,61,
+testuser4,1984-02-07,allowed,3,Bizz
